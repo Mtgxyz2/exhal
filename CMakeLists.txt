@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-set(CMAKE_BUILD_TYPE RELEASE)
+set(CMAKE_BUILD_TYPE Debug)
 project(exhal VERSION 2.1 DESCRIPTION "HAL Laboratory NES/SNES/GB (de)compression tools")
 
 add_library(hal_compress SHARED compress.c)
@@ -18,6 +18,6 @@ include(GNUInstallDirs)
 configure_file(exhal.pc.in exhal.pc @ONLY)
 install(TARGETS hal_compress
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-install(DIRECTORY include DESTINATION ${CMAKE_INSTALL_INCLUDEDIRS}/exhal)
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/exhal)
 
 install(FILES ${CMAKE_BINARY_DIR}/exhal.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)
